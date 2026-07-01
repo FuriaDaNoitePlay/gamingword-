@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 GAMING WORLD - ADM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container admin">
+        <header>
+            <h1>🎮 GAMING <span>WORLD</span></h1>
+            <p class="subtitle">👑 PAINEL ADMINISTRATIVO 👑</p>
+            <div class="neon-line"></div>
+        </header>
+
+        <div class="admin-panel">
+            <div class="sorteio-area">
+                <button id="btn-sortear" onclick="sortear()">
+                    🎰 GIRAR RODA GAMER
+                </button>
+                <div id="resultado-sorteio" class="resultado">
+                    🎯 Aguardando sorteio...
+                </div>
+            </div>
+
+            <div class="controles">
+                <button onclick="resetarRifa()" class="btn-danger">
+                    🔄 RESETAR RIFA
+                </button>
+                <a href="/" class="btn-link">🔙 Voltar para página principal</a>
+            </div>
+
+            <div class="tabela-vendas">
+                <h2>📋 NÚMEROS VENDIDOS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>🎯 Nº</th>
+                            <th>🎮 Ícone</th>
+                            <th>👤 Comprador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for numero, info in numeros.items() %}
+                        {% if info.vendido %}
+                        <tr>
+                            <td>#{{ numero }}</td>
+                            <td>{{ info.icone }}</td>
+                            <td>{{ info.comprador }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚡ GAMING WORLD - Sistema de Rifa v2.0 ⚡</p>
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
