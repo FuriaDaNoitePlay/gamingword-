@@ -1,65 +1,51 @@
+# ARQUIVOS DO PYTHON
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
 
----
+# ARQUIVOS DE DADOS (NÃO SUBIR PRO GITHUB)
+dados.json
+*.db
+*.sqlite3
 
-### 5️⃣ `templates/index.html`
+# AMBIENTE VIRTUAL
+venv/
+env/
+ENV/
+.env
+.venv
 
-```html
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 GAMING WORLD - RIFA</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🎮 GAMING <span>WORLD</span></h1>
-            <p class="subtitle">⚡ A COMUNIDADE GAMER ESTÁ DE VOLTA ⚡</p>
-            <div class="neon-line"></div>
-        </header>
+# EDITORES E IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
-        <div class="rifa-info">
-            <h2>🔥 RIFA GAMER 🔥</h2>
-            <p>Escolha seu número e concorra a prêmios épicos!</p>
-            <div class="stats">
-                <span>🎯 Total: 50 números</span>
-                <span id="contador">💰 Vendidos: 0</span>
-            </div>
-        </div>
+# LOGS E ARQUIVOS TEMPORÁRIOS
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
 
-        <div class="grid">
-            {% for numero, info in numeros.items() %}
-            <div class="numero-card" data-numero="{{ numero }}" data-vendido="{{ info.vendido }}">
-                <span class="icone">{{ info.icone }}</span>
-                <span class="num">#{{ numero }}</span>
-                {% if info.vendido %}
-                    <span class="vendido">🔒</span>
-                    <span class="comprador">{{ info.comprador }}</span>
-                {% else %}
-                    <button class="btn-comprar" onclick="comprar({{ numero }})">
-                        🎯 Comprar
-                    </button>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
+# ARQUIVOS DE CONFIGURAÇÃO LOCAL
+config.local.py
+settings_local.py
+*.local
 
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModal()">✕</span>
-                <h2>🎮 COMPRAR NÚMERO</h2>
-                <div class="modal-numero">#<span id="numero-modal"></span></div>
-                <input type="text" id="nome-comprador" placeholder="👤 Seu nickname gamer">
-                <button onclick="confirmarCompra()">🚀 GARANTIR NÚMERO</button>
-            </div>
-        </div>
-
-        <footer>
-            <p>⚡ GAMING WORLD - A comunidade gamer está de volta! ⚡</p>
-        </footer>
-    </div>
-    <script src="/static/script.js"></script>
-</body>
-</html>
+# TESTES E COBERTURA
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
